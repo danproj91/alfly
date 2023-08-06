@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
         initialRoute: "init_view",
         routes: {
           'init_view': ((context) => const InitViewScreen()),
+          'home': ((context) => const Home()),
           'sing_in': ((context) => const SingIn()),
           'sing_up': ((context) => const SingUp()),
           'verification_code': ((context) => Verification_Code()),

@@ -50,7 +50,7 @@ class _SingUpState extends State<SingUp> {
                           children: [
                             IconButton(
                               onPressed: () {
-                                Navigator.pushNamed(context, 'sing_in');
+                                Navigator.pushNamed(context, 'home');
                               },
                               icon: Icon(
                                 Icons.arrow_back_ios,
@@ -471,7 +471,7 @@ class _SingUpState extends State<SingUp> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '');
+                      Navigator.pushNamed(context, 'verification_code');
                     },
                     style: TextButton.styleFrom(
                       backgroundColor: Palette.ourBlue,

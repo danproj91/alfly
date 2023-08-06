@@ -31,7 +31,7 @@ class InitViewScreen extends StatelessWidget {
         const SlideTop(),
         const SlideBottom()
       ]),
-      SingIn()
+      const Home()
     ]));
   }
 }

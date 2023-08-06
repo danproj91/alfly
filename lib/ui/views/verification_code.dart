@@ -127,9 +127,9 @@ class _Verification_CodeState extends State<Verification_Code> {
                   onPressed: () {
                     /* if (widget.isDriverRoll) {
                       Navigator.push(context, MaterialPageRoute(builder: (context) =>LegalDocuments(isNavBarDriver,isVerificatioCode)));
-                    } else {
-                      Navigator.pushNamed(context, 'welcome_slide');
-                    }*/
+                    } else {*/
+                      Navigator.pushNamed(context, 'home');
+                    /*}*/
                   },
                   style: TextButton.styleFrom(
                     backgroundColor: Palette.ourBlue,
