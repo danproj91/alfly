@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:alfly/ui/helpers/export.dart';
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
@@ -39,15 +37,15 @@ class _HomeState extends State<Home> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.fmd_good_outlined,
+                      const Icon(Icons.fmd_good_outlined,
                           color: Palette.ourYellow, size: 20),
-                      SizedBox(
+                      const SizedBox(
                         width: 5,
                       ),
-                      Text(
+                      const Text(
                         '2CVC+VC64, Calle 93, Matanzas, Cuba ',
                         style: TextStyle(
                           fontWeight: FontWeight.w300,
@@ -55,18 +53,23 @@ class _HomeState extends State<Home> {
                           color: Palette.ourHintText,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 5,
                       ),
-                      Icon(Icons.more_horiz_outlined,
-                          color: Palette.ourBlue, size: 20),
+                      IconButton(
+                        icon: const Icon(Icons.more_horiz_outlined,
+                            color: Palette.ourBlue, size: 20),
+                        onPressed: () {
+                          Navigator.pushNamed(context, 'location');
+                        },
+                      ),
                     ],
                   ),
                   IconButton(
                     icon: const Icon(Icons.notifications_none_outlined,
                         color: Palette.ourBlue, size: 30),
                     onPressed: () {
-                      // ...
+                      Navigator.pushNamed(context, '');
                     },
                   ),
                 ],
@@ -79,7 +82,7 @@ class _HomeState extends State<Home> {
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.fromLTRB(15, 0, 0, 10),
+                padding: const EdgeInsets.fromLTRB(15, 0, 0, 10),
                 height: MediaQuery.of(context).size.height * 0.15,
                 width: MediaQuery.of(context).size.width,
                 decoration: const BoxDecoration(
@@ -88,59 +91,21 @@ class _HomeState extends State<Home> {
                     fit: BoxFit.fill,
                   ),
                 ),
-                child: Row(
+                child: const Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, 'sing_in');
-                      },
-                      style: TextButton.styleFrom(
-                        backgroundColor: Palette.ourWhite,
-                        fixedSize:
-                            Size(MediaQuery.of(context).size.width - 254, 28),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5.0)),
-                      ),
-                      child: const Text(
-                        'Iniciar sesión',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12,
-                          color: Palette.ourBlue,
-                        ),
-                      ),
-                    ),
+                    SingInButton(),
                     SizedBox(
                       width: 5,
                     ),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, 'sing_up');
-                      },
-                      style: TextButton.styleFrom(
-                        backgroundColor: Palette.ourWhite,
-                        fixedSize:
-                            Size(MediaQuery.of(context).size.width - 260, 28),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5.0)),
-                      ),
-                      child: const Text(
-                        'Registrarse',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12,
-                          color: Palette.ourBlue,
-                        ),
-                      ),
-                    ),
+                    SingUpButton(),
                   ],
                 ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     "Categorías",
                     style: TextStyle(
                         fontSize: 20,
@@ -156,7 +121,7 @@ class _HomeState extends State<Home> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -194,7 +159,7 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                   Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: Palette.ourBlue,
                         borderRadius: BorderRadius.all(Radius.circular(10))),
                     child: IconButton(
@@ -209,58 +174,20 @@ class _HomeState extends State<Home> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
-              Row(
+              const Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'sing_in');
-                    },
-                    style: TextButton.styleFrom(
-                      backgroundColor: Palette.ourBlue,
-                      fixedSize:
-                          Size(MediaQuery.of(context).size.width - 250, 35),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5.0)),
-                    ),
-                    child: const Text(
-                      'Popular',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12,
-                        color: Palette.ourYellow,
-                      ),
-                    ),
-                  ),
+                  PopularButton(),
                   SizedBox(
                     width: 10,
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'sing_up');
-                    },
-                    style: TextButton.styleFrom(
-                      backgroundColor: Palette.ourWhite,
-                      fixedSize:
-                          Size(MediaQuery.of(context).size.width - 250, 35),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5.0)),
-                    ),
-                    child: const Text(
-                      'Más cercano',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12,
-                        color: Palette.ourBlue,
-                      ),
-                    ),
-                  ),
+                  MoreNearButton()
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Row(
@@ -270,7 +197,7 @@ class _HomeState extends State<Home> {
                   Column(
                     children: [
                       Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             color: Palette.ourBlue,
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10))),
@@ -284,10 +211,10 @@ class _HomeState extends State<Home> {
                           color: Palette.ourYellow,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
-                      Text(
+                      const Text(
                         'Todos',
                         style: TextStyle(
                             color: Palette.ourBlue,
@@ -299,7 +226,7 @@ class _HomeState extends State<Home> {
                   Column(
                     children: [
                       Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             color: Palette.ourWhite,
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10))),
@@ -313,10 +240,10 @@ class _HomeState extends State<Home> {
                           color: Palette.ourBlue,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
-                      Text(
+                      const Text(
                         'Pizzas',
                         style: TextStyle(
                             color: Palette.ourBlue,
@@ -706,7 +633,6 @@ class _HomeState extends State<Home> {
               //padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
               child: Center(
                 child: FloatingNavbar(
-
                   backgroundColor: Palette.ourWhite,
                   borderRadius: 25,
                   padding: EdgeInsets.all(0),

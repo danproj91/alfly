@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:alfly/ui/helpers/export.dart';
 
-class Verification_Code extends StatefulWidget {
+class VerificationCode extends StatefulWidget {
+  const VerificationCode({super.key});
   /*final bool isDriverRoll;
   const Verification_Code(
     this.isDriverRoll,
@@ -13,10 +14,10 @@ class Verification_Code extends StatefulWidget {
   }*/
 
   @override
-  _Verification_CodeState createState() => _Verification_CodeState();
+  State<VerificationCode> createState() => _VerificationCodeState();
 }
 
-class _Verification_CodeState extends State<Verification_Code> {
+class _VerificationCodeState extends State<VerificationCode> {
   @override
   Widget build(BuildContext context) {
     // final bool isNavBarDriver=false;
@@ -42,7 +43,7 @@ class _Verification_CodeState extends State<Verification_Code> {
                     Container(
                       height: MediaQuery.of(context).size.height * 0.06,
                       width: MediaQuery.of(context).size.width * 0.18,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         borderRadius: BorderRadiusDirectional.only(
                             bottomEnd: Radius.circular(10),
                             topEnd: Radius.circular(10)),
@@ -57,7 +58,7 @@ class _Verification_CodeState extends State<Verification_Code> {
                               onPressed: () {
                                 Navigator.pushNamed(context, 'sing_in');
                               },
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.arrow_back_ios,
                                 color: Palette.ourBlue,
                               ),
@@ -67,7 +68,7 @@ class _Verification_CodeState extends State<Verification_Code> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.fromLTRB(0, 5, 10, 0),
+                      padding: const EdgeInsets.fromLTRB(0, 5, 10, 0),
                       child: const Text(
                         'Código de verificación ',
                         style: TextStyle(
@@ -86,10 +87,10 @@ class _Verification_CodeState extends State<Verification_Code> {
           right: 0,
           left: 0,
           child: Container(
-            padding: EdgeInsets.all(30),
+            padding: const EdgeInsets.all(30),
             child: Column(
               children: [
-                Text(
+                const Text(
                               "Ingrese su código OTP aquí",
                               textAlign: TextAlign.left,
                               style: TextStyle(
@@ -113,7 +114,7 @@ class _Verification_CodeState extends State<Verification_Code> {
                 ),
                 RichText(
                     textAlign: TextAlign.center,
-                    text: TextSpan(
+                    text: const TextSpan(
                       text: "Probar la verificación por correo",
                       style: TextStyle(
                           color: Palette.ourBlue,
@@ -133,7 +134,7 @@ class _Verification_CodeState extends State<Verification_Code> {
                   },
                   style: TextButton.styleFrom(
                     backgroundColor: Palette.ourBlue,
-                    fixedSize: Size(250, 35),
+                    fixedSize: const Size(250, 35),
                   ),
                   child: const Text(
                     'Verificar',
@@ -148,7 +149,7 @@ class _Verification_CodeState extends State<Verification_Code> {
                 ),
                 RichText(
                     textAlign: TextAlign.center,
-                    text: TextSpan(
+                    text: const TextSpan(
                       text:
                           "Se le ha enviado por un SMS un código de 4 dígitos a su teléfono",
                       style: TextStyle(
@@ -163,7 +164,7 @@ class _Verification_CodeState extends State<Verification_Code> {
   }
 
   _textFieldOTP(bool first, bool last) {
-    return Container(
+    return SizedBox(
       height: 85,
       child: AspectRatio(
         aspectRatio: 0.7,
@@ -180,20 +181,20 @@ class _Verification_CodeState extends State<Verification_Code> {
           showCursor: false,
           readOnly: false,
           textAlign: TextAlign.center,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 36,
           ),
           keyboardType: TextInputType.number,
           maxLength: 1,
           decoration: InputDecoration(
-            counter: Offstage(),
+            counter: const Offstage(),
             enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(width: 2, color: Colors.black12),
+              borderSide: const BorderSide(width: 2, color: Colors.black12),
               borderRadius: BorderRadius.circular(12),
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(width: 2, color: Palette.ourBlue),
+              borderSide: const  BorderSide(width: 2, color: Palette.ourBlue),
               borderRadius: BorderRadius.circular(12),
             ),
           ),

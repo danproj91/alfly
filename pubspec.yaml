@@ -66,6 +66,9 @@ flutter:
     - images/da_alicia.png
     - images/hecho_en_casa.png
     - images/ricardon.png
+    - images/avatar-person.png
+    - images/screen_barner.png
+    - images/header_style.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

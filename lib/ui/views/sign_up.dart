@@ -11,6 +11,19 @@ class SingUp extends StatefulWidget {
 
 class _SingUpState extends State<SingUp> {
   final _textController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
+      showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (context) => const ReferenceCodeDialog());
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +50,7 @@ class _SingUpState extends State<SingUp> {
                     Container(
                       height: MediaQuery.of(context).size.height * 0.06,
                       width: MediaQuery.of(context).size.width * 0.18,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         borderRadius: BorderRadiusDirectional.only(
                             bottomEnd: Radius.circular(10),
                             topEnd: Radius.circular(10)),
@@ -52,7 +65,7 @@ class _SingUpState extends State<SingUp> {
                               onPressed: () {
                                 Navigator.pushNamed(context, 'home');
                               },
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.arrow_back_ios,
                                 color: Palette.ourBlue,
                               ),
@@ -61,14 +74,14 @@ class _SingUpState extends State<SingUp> {
                         ),
                       ),
                     ),
-                    Text(
+                    const Text(
                       'Insertar Datos',
                       style: TextStyle(
                           color: Palette.ourBlue,
                           fontSize: 27,
                           fontWeight: FontWeight.bold),
                     ),
-                    Container(
+                    SizedBox(
                       height: MediaQuery.of(context).size.height * 0.04,
                       width: MediaQuery.of(context).size.width * 0.08,
                     )
@@ -82,7 +95,7 @@ class _SingUpState extends State<SingUp> {
           right: 20,
           left: 20,
           child: Container(
-            margin: EdgeInsets.fromLTRB(20, 50, 20, 0),
+            margin: const EdgeInsets.fromLTRB(20, 50, 20, 0),
             height: MediaQuery.of(context).size.height * 0.45,
             width: MediaQuery.of(context).size.width,
             child: Column(
@@ -92,14 +105,14 @@ class _SingUpState extends State<SingUp> {
                 const SizedBox(
                   height: 5,
                 ),
-                Text(
+                const Text(
                   "Nombre",
                   style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.normal,
                       color: Palette.ourBlue),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Container(
@@ -140,18 +153,18 @@ class _SingUpState extends State<SingUp> {
                 const SizedBox(
                   height: 10,
                 ),
-                Text(
+                const Text(
                   "Apellidos",
                   style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.normal,
                       color: Palette.ourBlue),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   height: MediaQuery.of(context).size.height * 0.06,
                   width: MediaQuery.of(context).size.width * 0.8,
                   decoration: const BoxDecoration(
@@ -188,14 +201,14 @@ class _SingUpState extends State<SingUp> {
                 const SizedBox(
                   height: 10,
                 ),
-                Text(
+                const Text(
                   "Teléfono",
                   style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.normal,
                       color: Palette.ourBlue),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Container(
@@ -208,8 +221,8 @@ class _SingUpState extends State<SingUp> {
                   child: Row(
                     children: [
                       Container(
-                        padding: EdgeInsets.fromLTRB(0, 0, 0, 5),
-                        child: Text(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
+                        child: const Text(
                           '+53  ',
                           style: TextStyle(
                             color: Palette.ourBlue,
@@ -259,7 +272,7 @@ class _SingUpState extends State<SingUp> {
             left: 0,
             bottom: 10,
             child: Container(
-              padding: EdgeInsets.fromLTRB(10, 30, 10, 0),
+              padding: const EdgeInsets.fromLTRB(10, 30, 10, 0),
               height: MediaQuery.of(context).size.height * 0.45,
               width: MediaQuery.of(context).size.width,
               decoration: const BoxDecoration(
@@ -276,14 +289,14 @@ class _SingUpState extends State<SingUp> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             "Género",
                             style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.normal,
                                 color: Palette.ourBlue),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
                           Container(
@@ -329,18 +342,18 @@ class _SingUpState extends State<SingUp> {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             "Fecha de Nacimiento",
                             style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.normal,
                                 color: Palette.ourBlue),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
                           Container(
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             height: MediaQuery.of(context).size.height * 0.06,
                             width: MediaQuery.of(context).size.width * 0.45,
                             decoration: const BoxDecoration(
@@ -381,11 +394,11 @@ class _SingUpState extends State<SingUp> {
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Container(
-                    margin: EdgeInsets.fromLTRB(60, 10, 60, 10),
+                    margin: const EdgeInsets.fromLTRB(60, 10, 60, 10),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(5),
@@ -403,14 +416,14 @@ class _SingUpState extends State<SingUp> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text(
+                            const Text(
                               "Código de referencia",
                               style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.normal,
                                   color: Palette.ourBlue),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 5,
                             ),
                             Container(
@@ -453,7 +466,7 @@ class _SingUpState extends State<SingUp> {
                             ),
                           ],
                         ),
-                        Column(
+                        const Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Icon(
@@ -469,32 +482,13 @@ class _SingUpState extends State<SingUp> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.02,
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'verification_code');
-                    },
-                    style: TextButton.styleFrom(
-                      backgroundColor: Palette.ourBlue,
-                      fixedSize:
-                          Size(MediaQuery.of(context).size.width - 90, 45),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0)),
-                    ),
-                    child: const Text(
-                      'Registrarse',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Palette.ourYellow,
-                      ),
-                    ),
-                  ),
+                  const SingUpLargeButton(),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.02,
                   ),
                   RichText(
                       textAlign: TextAlign.center,
-                      text: TextSpan(
+                      text: const TextSpan(
                         text: "Al iniciar, aceptas nuestros",
                         style: TextStyle(
                           color: Palette.ourHintText,

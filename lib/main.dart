@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
           'home': ((context) => const Home()),
           'sing_in': ((context) => const SingIn()),
           'sing_up': ((context) => const SingUp()),
-          'verification_code': ((context) => Verification_Code()),
+          'verification_code': ((context) => VerificationCode()),
+          'location': ((context) => Location()),
         });
   }
 }

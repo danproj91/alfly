@@ -19,27 +19,27 @@ class SingInState extends State<SingIn> {
         const Background(),
         const SlideTop(),
         Positioned(
-            top: 0,
+            top: 90,
             right: 0,
             left: 0,
-            child: SizedBox(
-                //height: 620,
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.width,
-                child: Column(children: [
-                  SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.6,
-                      width: MediaQuery.of(context).size.width * 0.6,
-                      child: Image.asset(
-                        "images/logo_init v2 ss.png",
-                      )),
-                ]))),
-        Positioned(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.start, children: [
               SizedBox(
+                  //height: MediaQuery.of(context).size.height * 0.6,
+                  //width: MediaQuery.of(context).size.width * 0.6,
+                  child: Image.asset(
+                "images/logo_init v2 ss.png",
+              )),
+            ])),
+        Positioned(
+          right: 0,
+          left: 0,
+          bottom: 0,
+          child: Column(
+            //crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              const SizedBox(
                 height: 20,
               ),
               const Center(
@@ -51,11 +51,11 @@ class SingInState extends State<SingIn> {
                       color: Palette.ourBlue),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
-                padding: EdgeInsets.all(5),
+                padding: const EdgeInsets.all(5),
                 height: MediaQuery.of(context).size.height * 0.06,
                 width: MediaQuery.of(context).size.width * 0.8,
                 decoration: const BoxDecoration(
@@ -86,80 +86,31 @@ class SingInState extends State<SingIn> {
                         )),
                   ),
                 ),
-              )
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height * 0.33,
+                width: MediaQuery.of(context).size.width,
+                decoration: const BoxDecoration(
+                  color: Palette.ourWhite,
+                  // borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                ),
+                child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SingInLargeButton(),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    WithThisCellButton()
+                  ],
+                ),
+              ),
             ],
           ),
         ),
-        Positioned(
-            right: 0,
-            left: 0,
-            bottom: 10,
-            child: Container(
-              height: MediaQuery.of(context).size.height * 0.33,
-              width: MediaQuery.of(context).size.width,
-              decoration: const BoxDecoration(
-                color: Palette.ourWhite,
-                // borderRadius: BorderRadius.all(Radius.circular(10.0)),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'verification_code');
-                    },
-                    style: TextButton.styleFrom(
-                      backgroundColor: Palette.ourBlue,
-                      fixedSize:
-                          Size(MediaQuery.of(context).size.width - 90, 60),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0)),
-                    ),
-                    child: const Text(
-                      'Iniciar sesión',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Palette.ourYellow,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  OutlinedButton(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.phone_outlined, color: Palette.ourBlue),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Text("Con este número de móvil",
-                              style: TextStyle(
-                                  fontSize: 16, color: Palette.ourBlue)),
-                        ],
-                      ),
-                      onPressed: () {
-                        Navigator.pushNamed(context, 'sing_up');
-                      },
-                      style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.all(10),
-                          fixedSize:
-                              Size(MediaQuery.of(context).size.width - 90, 60),
-                          textStyle: TextStyle(
-                            fontSize: 16,
-                          ),
-                          foregroundColor: Palette.ourBlack,
-                          shadowColor: Colors.black,
-                          //side: BorderSide(color: Palette.ourBlue, width: 2),
-                          shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(10.0))
-                          //shape: StadiumBorder(),
-                          )),
-                ],
-              ),
-            )),
         const SlideBottom()
       ]),
     ]));
