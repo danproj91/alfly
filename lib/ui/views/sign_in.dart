@@ -100,7 +100,7 @@ class SingInState extends State<SingIn> {
                 child: const Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SingInLargeButton(),
+                    LargeBlueButton('verifCode','Iniciar sesión'),
                     SizedBox(
                       height: 30,
                     ),

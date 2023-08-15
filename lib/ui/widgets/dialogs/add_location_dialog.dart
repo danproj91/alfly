@@ -63,11 +63,11 @@ class _AddLocationDialogState extends State<AddLocationDialog> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CancelButton(),
+            ShortBlueButton('','Cancel'),
             SizedBox(
               width: 10,
             ),
-            AcceptButton(),
+            ShortBlueButton('','Aceptar'),
           ],
         ),
         const SizedBox(

@@ -14,7 +14,7 @@ class InitViewScreen extends StatelessWidget {
             right: 0,
             left: 0,
             child: SizedBox(
-                //height: 620,
+                
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
                 child: Column(

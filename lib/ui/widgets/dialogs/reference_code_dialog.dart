@@ -62,11 +62,11 @@ class ReferenceCodeDialog extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            DontHaveButton(),
+            ShortBlueButton('','No tengo'),
             SizedBox(
               width: 10,
             ),
-            AcceptButton(),
+            ShortBlueButton('','Aceptar'),
           ],
         ),
         const SizedBox(

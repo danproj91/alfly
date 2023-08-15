@@ -16,7 +16,7 @@ class _SingUpState extends State<SingUp> {
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       showDialog(
           context: context,
           barrierDismissible: false,
@@ -482,7 +482,7 @@ class _SingUpState extends State<SingUp> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.02,
                   ),
-                  const SingUpLargeButton(),
+                  const LargeBlueButton('verifCode', 'Continuar'),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.02,
                   ),

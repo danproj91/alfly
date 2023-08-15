@@ -10,7 +10,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  //final _textController = TextEditingController();
   int _index = 0;
   @override
   Widget build(BuildContext context) {
@@ -22,8 +21,6 @@ class _HomeState extends State<Home> {
             right: 0,
             left: 0,
             child: Container(
-              //margin: EdgeInsets.all(5),
-              //height: 620,
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(color: Colors.grey.shade100),
@@ -98,7 +95,7 @@ class _HomeState extends State<Home> {
                     SizedBox(
                       width: 5,
                     ),
-                    SingUpButton(),
+                    ShortWhiteButton('sing_up', 'Registrarse'),
                   ],
                 ),
               ),

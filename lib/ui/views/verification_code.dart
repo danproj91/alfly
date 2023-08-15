@@ -4,14 +4,6 @@ import 'package:alfly/ui/helpers/export.dart';
 
 class VerificationCode extends StatefulWidget {
   const VerificationCode({super.key});
-  /*final bool isDriverRoll;
-  const Verification_Code(
-    this.isDriverRoll,
-  );
-
-  bool get IsDriver {
-    return isDriverRoll;
-  }*/
 
   @override
   State<VerificationCode> createState() => _VerificationCodeState();
@@ -20,68 +12,64 @@ class VerificationCode extends StatefulWidget {
 class _VerificationCodeState extends State<VerificationCode> {
   @override
   Widget build(BuildContext context) {
-    // final bool isNavBarDriver=false;
-    // final bool isVerificatioCode= true;
     return Scaffold(
         body: Stack(children: [
-      
       Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              height: MediaQuery.of(context).size.height * 0.15,
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                color: Palette.ourYellow.withOpacity(0.7),
-              ),
-              child: Center(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: MediaQuery.of(context).size.height * 0.06,
-                      width: MediaQuery.of(context).size.width * 0.18,
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadiusDirectional.only(
-                            bottomEnd: Radius.circular(10),
-                            topEnd: Radius.circular(10)),
-                        color: Palette.ourWhite,
-                      ),
-                      child: Center(
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            IconButton(
-                              onPressed: () {
-                                Navigator.pushNamed(context, 'sing_in');
-                              },
-                              icon: const Icon(
-                                Icons.arrow_back_ios,
-                                color: Palette.ourBlue,
-                              ),
+          top: 0,
+          left: 0,
+          right: 0,
+          child: Container(
+            height: MediaQuery.of(context).size.height * 0.15,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              color: Palette.ourYellow.withOpacity(0.7),
+            ),
+            child: Center(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.06,
+                    width: MediaQuery.of(context).size.width * 0.18,
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadiusDirectional.only(
+                          bottomEnd: Radius.circular(10),
+                          topEnd: Radius.circular(10)),
+                      color: Palette.ourWhite,
+                    ),
+                    child: Center(
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          IconButton(
+                            onPressed: () {
+                              Navigator.pushNamed(context, 'sing_in');
+                            },
+                            icon: const Icon(
+                              Icons.arrow_back_ios,
+                              color: Palette.ourBlue,
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
-                    Container(
-                      padding: const EdgeInsets.fromLTRB(0, 5, 10, 0),
-                      child: const Text(
-                        'Código de verificación ',
-                        style: TextStyle(
-                            color: Palette.ourBlue,
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold),
-                      ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(0, 5, 10, 0),
+                    child: const Text(
+                      'Código de verificación ',
+                      style: TextStyle(
+                          color: Palette.ourBlue,
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold),
                     ),
-                    
-                  ],
-                ),
+                  ),
+                ],
               ),
-            )),
+            ),
+          )),
       Positioned(
           top: 150,
           right: 0,
@@ -91,13 +79,13 @@ class _VerificationCodeState extends State<VerificationCode> {
             child: Column(
               children: [
                 const Text(
-                              "Ingrese su código OTP aquí",
-                              textAlign: TextAlign.left,
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Palette.ourBlue,
-                              ),
-                            ),
+                  "Ingrese su código OTP aquí",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Palette.ourBlue,
+                  ),
+                ),
                 const SizedBox(
                   height: 50,
                 ),
@@ -126,11 +114,7 @@ class _VerificationCodeState extends State<VerificationCode> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    /* if (widget.isDriverRoll) {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) =>LegalDocuments(isNavBarDriver,isVerificatioCode)));
-                    } else {*/
-                      Navigator.pushNamed(context, 'home');
-                    /*}*/
+                    Navigator.pushNamed(context, 'home');
                   },
                   style: TextButton.styleFrom(
                     backgroundColor: Palette.ourBlue,
@@ -194,7 +178,7 @@ class _VerificationCodeState extends State<VerificationCode> {
               borderRadius: BorderRadius.circular(12),
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: const  BorderSide(width: 2, color: Palette.ourBlue),
+              borderSide: const BorderSide(width: 2, color: Palette.ourBlue),
               borderRadius: BorderRadius.circular(12),
             ),
           ),

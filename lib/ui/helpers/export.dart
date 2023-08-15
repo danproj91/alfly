@@ -14,16 +14,18 @@ export 'package:alfly/ui/views/location.dart';
 
 //Widget/buttons
 export 'package:alfly/ui/widgets/buttons/sign_in_button.dart';
-export 'package:alfly/ui/widgets/buttons/sign_up_button.dart';
-export 'package:alfly/ui/widgets/buttons/accept_button.dart';
-export 'package:alfly/ui/widgets/buttons/cancel_button.dart';
+export 'package:alfly/ui/widgets/buttons/short_white_button.dart';
+export 'package:alfly/ui/widgets/buttons/short_blue_button.dart';
+export 'package:alfly/ui/widgets/buttons/large_blue_button.dart';
+//export 'package:alfly/ui/widgets/buttons/accept_button.dart';
+//export 'package:alfly/ui/widgets/buttons/cancel_button.dart';
 export 'package:alfly/ui/widgets/buttons/popular_button.dart';
 export 'package:alfly/ui/widgets/buttons/more_near_button.dart';
-export 'package:alfly/ui/widgets/buttons/sign_in_large_button.dart';
+//export 'package:alfly/ui/widgets/buttons/sign_in_large_button.dart';
 export 'package:alfly/ui/widgets/buttons/with_this_cell_button.dart';
-export 'package:alfly/ui/widgets/buttons/sign_up_large_button.dart';
-export 'package:alfly/ui/widgets/buttons/other_location_button.dart';
-export 'package:alfly/ui/widgets/buttons/dont_have_button.dart';
+//export 'package:alfly/ui/widgets/buttons/sign_up_large_button.dart';
+//export 'package:alfly/ui/widgets/buttons/other_location_button.dart';
+//export 'package:alfly/ui/widgets/buttons/dont_have_button.dart';
 
 
 //Widget/dialogs
